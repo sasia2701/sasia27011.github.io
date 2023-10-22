@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    
+    <title>KRT TEKNİK SERVİS</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+
+        :root {
+            --main-color: #525254;
+            --black-color: #000000;
+            --border: 0.1rem solid rgba(255, 255, 255, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: 0.2s ease;
+            font-family: font-family: 'Poppins', sans-serif;
+            ;
+        }
+
+        .logo img {
+            width: 200px;
+            height: 100px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 9rem;
+            scroll-behavior: smooth;
+        }
+
+        html::-webkit-scrollbar {
+            width: 0.8rem;
+            background-color: white;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            width: 0.8rem;
+            border-radius: 3rem;
+            background-color: gray;
+        }
+
+        body {
+            background-color: var(--main-color);
+            margin-bottom: 0;
+        }
+
+        section {
+            padding: 3.5rem 7%;
+        }
+
+        .logo {
+            height: 8rem;
+        }
+
+        /*Header start*/
+        .header .logo img {
+            margin-top: 0.4rem;
+            height: 7rem;
+        }
+
+        .header {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 4%;
+            margin: 2rem 7%;
+            border-radius: 30rem;
+            box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.75);
+            position: sticky;
+            top: 0;
+        }
+
+        .header .navbar a {
+            margin: 0 1rem;
+            font-size: 2rem;
+            color: var(--black-color);
+            border-bottom: 0.1rem solid transparent;
+            background-color: transparent;
+        }
+
+        .header .navbar .active,
+        .header .navbar a:hover {
+            border-color: gray;
+            padding-bottom: 0.5rem;
+        }
+
+        .header .buttons button {
+            cursor: pointer;
+            font-size: 2.5rem;
+            color: black;
+            margin-left: 0.2rem;
+            background-color: transparent;
+        }
+
+        .header .buttons a {
+            color: black;
+            margin-left: 0.2rem;
+            background-color: transparent;
+        }
+
+        /*Header end*/
+        /*Home Start*/
+        .home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: url(./3.jpg) no-repeat;
+            background-size: cover;
+            cursor: pointer;
+            font-size: 2.5rem;
+            margin-top: -11.95rem;
+        }
+
+        .home .content {
+            max-width: 60rem;
+        }
+
+        .home .content h3 {
+            font-size: 4rem;
+            color: black;
+        }
+
+        .home .content p {
+            font-size: 1.7rem;
+            font-weight: 300;
+            line-height: 1.8rem;
+            padding: 1rem;
+            color: gray;
+        }
+
+        .btn {
+            margin-top: 1rem;
+            display: inline-block;
+            padding: 2rem 3.75rem;
+            border-radius: 30rem;
+            font-size: 1.8rem;
+            color: white;
+            background-color: var(--black-color);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            margin-top: 1rem;
+            display: inline-block;
+            padding: 2rem 3.75rem;
+            border-radius: 30rem;
+            font-size: 1.8rem;
+            color: gray;
+            background-color: var(--black-color);
+            cursor: pointer;
+        }
+
+        .heading {
+            color: white;
+            text-transform: uppercase;
+            font-size: 4rem;
+            margin-bottom: 3.5rem;
+            border-bottom: 0.1rem solid #fff;
+
+        }
+
+        .heading span {
+            color: white;
+            text-transform: uppercase;
+        }
+
+        /*Home End*/
+        /*Menu Start*/
+        .menu .box-container {
+            display: flex;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 1.5rem;
+            /* Ensure the container can expand to accommodate cards */
+            max-width: 100%;
+        }
+
+        .menu .box-container .box img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 3rem;
+        }
+
+        .menu .box-container .box {
+            padding: 2rem;
+            border-radius: 3rem;
+            background-color: white;
+            min-height: 30rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .menu .box-container .box .menu-category {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .menu .box-container .box h3 {
+            font-size: 3rem;
+            padding: 1rem 0;
+        }
+
+        .menu .box-container .box .price {
+            font-size: 3rem;
+            padding: 0.5rem 0;
+        }
+
+        .menu .box-container .box .price span {
+            font-size: 1.5rem;
+            padding: 0.5rem 0;
+            text-decoration: line-through;
+        }
+
+        /*Menu End*/
+        /*About Start*/
+        .about .row {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 2rem;
+        }
+
+        .about .row .image {
+            flex: 1 1 45rem;
+        }
+
+        .about .row img {
+            width: 100%;
+        }
+
+        .about .row .content {
+            flex: 1 1 45rem;
+        }
+
+        .about .row .content h3 {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .about .row .content p {
+            font-size: 1.6rem;
+            color: white;
+            padding: 1rem 0;
+            line-height: 1.8;
+        }
+
+        /*About End*/
+        /*Contact Section Start*/
+        .contact .row {
+            display: flex;
+            background-color: var(--black-color);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .contact .row .map {
+            flex: 1 1 45rem;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .contact .row form {
+            flex: 1 1 45rem;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .contact .row form h3 {
+            text-transform: uppercase;
+            font-size: 3.5rem;
+            color: #fff;
+        }
+
+        .contact .row form .inputBox {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            border: var(--border);
+        }
+
+        .contact .row form .inputBox a {
+            color: #fff;
+            font-size: 2rem;
+            padding-left: 2rem;
+        }
+
+        .contact .row form .inputBox input {
+            width: 100%;
+            padding: 2rem;
+            font-size: 1.7rem;
+            color: #fff;
+            text-transform: none;
+            background-color: transparent;
+        }
+
+        .contact .row form .buttons button {
+            cursor: pointer;
+            font-size: 3rem;
+            color: white;
+            margin-left: 0.2rem;
+            background-color: transparent;
+        }
+
+        .contact .row form .buttons a {
+
+            color: white;
+            margin-left: 0.2rem;
+            background-color: transparent;
+        }
+
+        /*Contact Section End*/
+        /*Galery Section start*/
+        .galeri .images {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px 0;
+            /* Üst ve alt boşlukları 20 piksel olarak ayarlayın */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            /* Resimler 7 taneden sonra alt satıra geçsin */
+        }
+
+
+        .galeri .images .box_2 {
+            width: 150px;
+            height: 150px;
+            background: gray;
+            margin: 0px 14px;
+            transition: 0.5s;
+            margin-bottom: 14px;
+            /* Resimler arasına boşluk bırakmak için margin-bottom ekleyin */
+        }
+
+        .galeri .images .box_2 img {
+            width: 150px;
+            height: 150px;
+            border-radius: 6px;
+        }
+
+        .galeri .images .box_2:hover {
+            transform: scale(1.2);
+            background: black;
+            z-index: 2;
+        }
+
+        /*Galery Section End*/
+        /*Footer Start*/
+        .footer-basic {
+            padding: 12px 0;
+            background-color: #ffffff;
+            color: #4b4c4d;
+        }
+
+        .footer-basic ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .footer-basic li {
+            padding: 0 10px;
+        }
+
+        .footer-basic ul a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .footer-basic ul a:hover {
+            opacity: 1;
+        }
+
+        .footer-basic .social {
+            text-align: center;
+            padding-bottom: 25px;
+        }
+
+        .footer-basic .social>a {
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            margin: 0 8px;
+            color: inherit;
+            opacity: 0.75;
+        }
+
+        .footer-basic .social>a:hover {
+            opacity: 0.9;
+        }
+
+        .footer-basic .copyright {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 13px;
+            color: #aaa;
+            margin-bottom: 0;
+        }
+
+        /*Footer End*/
+        /*responsive start*/
+        @media (max-width: 991px) {
+            html {
+              font-size: 55%;
+            }
+          
+            .header {
+              padding: 1.5rem 2rem;
+            }
+          
+            .header .logo img {
+              height: 7rem;
+            }
+          
+            section {
+              padding: 2rem;
+            }
+          
+            .products .box-container .box .box-head .name {
+              font-size: 3.4rem;
+            }
+          }
+          
+          @media (max-width: 768px) {
+            .header #menu-btn {
+              display: inline-block;
+            }
+          
+            .header .navbar {
+              position: absolute;
+              top: 95%;
+              background-color: #fff;
+              height: calc(100vh - 9rem);
+              width: 30rem;
+              box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
+              right: -100%;
+            }
+          
+            .header .navbar.active {
+              right: 3rem;
+            }
+          
+            .header .navbar a {
+              color: var(--black-color);
+              display: block;
+              margin: 1.5rem;
+              padding: 0.5rem;
+              font-size: 2rem;
+            }
+          }
+          
+          @media (max-width: 576px) {
+            html {
+              font-size: 50%;
+            }
+          
+            .header .search-form {
+              width: 30rem;
+            }
+          }          
+        /*responsive end*/
+    </style>
+
+<body>
+    <!--!header start-->
+    <header class="header">
+        <a href="homepage.html" class="logo">
+            <img src="4.jpg" alt="krtteknik.jpg">
+        </a>
+        <nav class="navbar">
+            <a href="#ana sayfa" class="active">ANA SAYFA</a>
+            <a href="#hizmetlerimiz">HİZMETLERİMİZ</a>
+            <a href="#hakkimizda">HAKKIMIZDA</a>
+            <a href="#galeri">GALERİ</a>
+            <a href="#petek">PETEK TEMİZLEME</a>
+            <a href="#iletisim">İLETİŞİM</a>
+        </nav>
+        <div class="buttons">
+            <button>
+                <a href="tel:+905442694736"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://wa.me/905442694736"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/krtteknik/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/search/top?q=krtteknik"><i class="fa-brands fa-facebook"></i></a>
+                <button id="menu-btn"><i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <!--!header end-->
+    <!--!Home Section Start*/-->
+    <section class="home" id="home">
+        <div class="content">
+            <h3>7/24 Kombi Teknik Servisi</h3>
+            <p>Tüm Sorularınız ve Servis hizmeti için Size bir telefon kadar yakınız!</p>
+            <a href="tel:+905442694736" class="btn">Telefon et</a>
+            <a href="https://wa.me/905442694736" class="btn">Whatsapp ile Mesaj Gönder</a>
+        </div>
+    </section>
+    <!--!/*Home Section End*/-->
+    <!--! Menu Section Start-->
+    <section class="menu" id="hizmetlerimiz">
+        <h1 class="heading" >HİZMETLERİMİZ </h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="box-head">
+                    <img src="kombi.jpg" alt="kombi.jpg" style="height: 270px;>
+                    <br>
+                    <span class=" menu-category">KRT TEKNİK</span>
+                    <h3>Kombi bakım</h3>
+                </div>
+                <br>
+                <div class="box-bottom">
+                    <a href="#" class="btn">Whatsapp ile mesaj gönder</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-head">
+                    <img src="petek.jpg" alt="petek.jpg" style="height: 270px;">
+                    <br>
+                    <span class="menu-category">krt teknik</span>
+                    <h3>petek bakım</h3>
+                </div>
+                <div class="box-bottom">
+                    <a href="#" class="btn">Whatsapp ile mesaj gönder</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-head">
+                    <img src="klima.jpg" alt="klima.jpg" style="height: 270px" ;>
+                    <br>
+                    <span class="menu-category">krt teknik</span>
+                    <h3>Klima bakım</h3>
+                </div>
+                <div class="box-bottom">
+                    <a href="#" class="btn">Whatsapp ile mesaj gönder</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--! Menu Section End-->
+    <!--! About Section Start-->
+    <section class="about" id="hakkimizda">
+        <h1 class="heading">HAKKIMIZDA</h1>
+        <div class="row">
+            <div class="image">
+                <img src="hakkimizda.jpg" alt="hakkimizda.jpg" style="width: 600px; height: 500px;">
+            </div>
+            <div class="content">
+                <h3>KRT Teknik Isıtma ve soğutma sistemleri bakım Servisi</h3>
+                <p>KRT Teknik Kombi Servisi, 2007 yılından beri İstanbul geneline kombi servisi hizmeti vermekteyiz.
+                    Kombi servis hizmetinde bir devrim yaratarak, her marka ve model kombi için özel olarak eğitim
+                    görmüş, nitelikli kombi servis uzmanları ile tüm İstanbul ilçelerinde hizmet vermekteyiz.
+
+                    Yıllık kombi bakımı ve acil arızalar için servis hizmetleri ile her zaman en iyi şekilde rezive
+                    edilen kombilerin arıza durumlarında tamiri ve petek temizliği gibi hizmetler verilmektedir.
+
+                    Kombinin parçalarını değiştirip diğer sorunlarından anlamayan kombi servisleri gibi müşteriye
+                    gereksiz masraf çıkarmak ya da tekrarlayacak sorunlarla karşı karşıya bırakmamak için, her zaman
+                    kombimizin bütün kontrolleri yapılmakta, çözümler de en doğru şekilde bulunmaktadır.
+
+                    Düzenli olarak kombi bakımlarının yaptırılması, gaz sızıntısı gibi tehlikeli durumlara yol
+                    açabilir...
+                </p>
+                <a href="#" class="btn">Daha Fazla</a>
+            </div>
+        </div>
+    </section>
+    <!--! About Section End-->
+    <!--! Galery Section Start-->
+    <section class="galeri" id="galeri">
+        <h1 class="heading">Galeri</h1>
+        <div class="images">
+            <div class="box_2">
+                <a class="box" data-fancybox="gallery" href="images_krtteknik/1.jpg">
+                    <img src="images_krtteknik/1.jpg" alt="Resim 2"></a>
+            </div>
+            <div class="box_2">
+                <a class="box" data-fancybox="gallery" href="images_krtteknik/2.jpg">
+                    <img src="images_krtteknik/2.jpg" alt="Resim 3"></a>
+            </div>
+            <div class="box_2">
+                <a class="box" data-fancybox="gallery" href="images_krtteknik/3.jpg">
+                    <img src="images_krtteknik/3.jpg" alt="Resim 2"></a>
+            </div>
+            <div class="box_2">
+                <a class="box" data-fancybox="gallery" href="images_krtteknik/4.jpg">
+                    <img src="images_krtteknik/4.jpg" alt="Resim 2"></a>
+            </div>
+            <div class="box_2">
+                <a class="box" data-fancybox="gallery" href="images_krtteknik/5.jpg">
+                    <img src="images_krtteknik/5.jpg" alt="Resim 3"></a>
+            </div>
+            <div class="box_2">
+                <a class="box" data-fancybox="gallery" href="images_krtteknik/6.jpg">
+                    <img src="images_krtteknik/6.jpg" alt="Resim 2"></a>
+            </div>
+            <div class="box_2">
+                <a class="box" data-fancybox="gallery" href="images_krtteknik/7.jpg">
+                    <img src="images_krtteknik/7.jpg" alt="Resim 2"></a>
+            </div>
+            <div class="box_2">
+                <a class="box" data-fancybox="gallery" href="images_krtteknik/8.jpg">
+                    <img src="images_krtteknik/8.jpg" alt="Resim 3"></a>
+            </div>
+            <div class="box_2">
+                <a class="box" data-fancybox="gallery" href="images_krtteknik/19.jpg">
+                    <img src="images_krtteknik/19.jpg" alt="Resim 2"></a>
+            </div>
+            <div class="box_2">
+                <a class="box" data-fancybox="gallery" href="images_krtteknik/10.jpg">
+                    <img src="images_krtteknik/10.jpg" alt="Resim 2"></a>
+            </div>
+            <div class="box_2">
+                <a class="box" data-fancybox="gallery" href="images_krtteknik/11.jpg">
+                    <img src="images_krtteknik/11.jpg" alt="Resim 2"></a>
+            </div>
+            <div class="box_2">
+                <a class="box" data-fancybox="gallery" href="images_krtteknik/12.jpg">
+                    <img src="images_krtteknik/12.jpg" alt="Resim 2"></a>
+            </div>
+            <div class="box_2">
+                <a class="box" data-fancybox="gallery" href="images_krtteknik/13.jpg">
+                    <img src="images_krtteknik/13.jpg" alt="Resim 2"></a>
+            </div>
+            <div class="box_2">
+                <a class="box" data-fancybox="gallery" href="images_krtteknik/14.jpg">
+                    <img src="images_krtteknik/14.jpg" alt="Resim 2"></a>
+            </div>
+            <a href="#" class="btn">daha fazla</a>
+
+        </div>
+    </section>
+    <!--! Galery Section End-->
+    <!--! About Section Start-->
+    <section class="about" id="petek">
+        <h1 class="heading">Petek Temizleme</h1>
+        <div class="row">
+            <div class="image">
+                <img src="radiator.jpg" alt="radiator.jpg" style="width: 600px; height: 500px;">
+            </div>
+            <div class="content">
+                <h3>KRT Teknik Isıtma ve soğutma sistemleri bakım Servisi</h3>
+                <p>KRT Teknik Isıtma Ve Soğutma Sistemleri Bakım Servisi
+
+                    Teknik olarak Servis kadromuz eğitimli ve kılık kıyafetine önem vererek üstün özveriye sahip olup
+                    kombilerinize içten bakmaktadır. Tehlikeli ortamlarda sizleri kötü düşüncelere kapılmamanız için
+                    profesyonel kadromuz ile sizlere en iyi hizmeti sunabilmek için her daim yanınızdayız. Uzmanlık
+                    açısında en yüksek seviyelerde olup sizler rahat nefes almanız için fabrikamız 7 gün boyunca saat
+                    sorunu yapmadan gönül rahatlığı ile arayıp servis talebinde bulunabilirsiniz. Kombi servisi hakkında
+                    tüm bilgileri firmamız tarafından teyit edebilirsiniz.
+
+                    Kombi yıllık bakım servisi modellerine göre servislik hizmeti vererek tüm müşterilerin memnuniyet
+                    halinde olarak tüm cihazları saat sorunu yapmadan istenilen günlerde randevu alabilirsiniz...
+                </p>
+                <a href="#" class="btn">Daha Fazla</a>
+            </div>
+        </div>
+    </section>
+    <!--! About Section End-->
+    <!--!Contact Section Start-->
+    <section class="contact" id="iletisim">
+        <h1 class="heading">İLETİŞİM</h1>
+        <div class="row">
+            <iframe class="map"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12739.700413314302!2d37.3311654!3d37.0354321!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1531e1d5c0e4d1e5%3A0x2543fbb4446386c!2sKrt%20teknik!5e0!3m2!1sen!2str!4v1697898261368!5m2!1sen!2str"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <form>
+                <h3>İLETİŞİM</h3>
+                <div class="inputBox">
+                    <a href="mailto:mht.279@gmail.com"><i class="fa-solid fa-envelope"> mht.279@gmail.com</i></a>
+                </div>
+                <div class="inputBox">
+                    <a href="tel:+905442694736"><i class="fa-solid fa-phone"> +905442694736</i></a>
+                </div>
+                <div class="inputBox">
+                    <a href="https://www.instagram.com/krtteknik/"><i class="fa-brands fa-instagram"> krtteknik</i></a>
+                </div>
+                <div class="inputBox">
+                    <a href="https://www.facebook.com/search/top?q=krtteknik"><i class="fa-brands fa-facebook">
+                            krtteknik</i></a>
+                </div>
+                <div class="buttons">
+                    <button>
+                        <a href="tel:+905442694736"><i class="fa-solid fa-phone"></i></a>
+                        <a href="https://www.instagram.com/krtteknik/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/search/top?q=krtteknik"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="mailto:mht.279@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!--!Contact Section End-->
+    <!--!Footer Start-->
+    <div class="footer-basic">
+        <footer>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#ana sayfa">Ana Sayfa</a></li>
+                <li class="list-inline-item"><a href="#hizmetlerimiz">Hizmetlerimiz</a></li>
+                <li class="list-inline-item"><a href="#hakkimizda">Hakkımızda</a></li>
+                <li class="list-inline-item"><a href="#galeri">Galeri</a></li>
+                <li class="list-inline-item"><a href="#petek">Petek Temizleme</a></li>
+                <li class="list-inline-item"><a href="#iletisim">İletişim</a></li>
+            </ul>
+            <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a>
+                <a href="#"><i class="icon ion-social-facebook"></i></a>
+            </div>
+            <p class="copyright">Powered by MUHAMMED MUSTAFA KURT</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
